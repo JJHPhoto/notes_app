@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Index() {
+const HomeScreen = () => {
   return (
     <View style= {styles.container}>
       <Text>Edit app/index.tsx to edit this screen.</Text>
@@ -15,3 +15,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   }
 })
+
+export default HomeScreen;
