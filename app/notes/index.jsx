@@ -11,6 +11,20 @@ const NoteScreen = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [newNote, setNewNote] = useState('');
 
+    //Add Note
+
+    const addNote = () => {
+        if (newNote.trim() === ' ') return;
+
+        setNotes((prevNotes) => [
+            ...prevNotes,
+            { id: Date.now.toString(), text: newNote}
+        ]);
+
+        setNewNote('');
+        setModalVisible(false);
+    }
+     
     return ( 
     <View style = {styles.container}>
         <FlatList 
@@ -43,7 +57,7 @@ const NoteScreen = () => {
                         Add a New Note
                     </Text>
                     <TextInput 
-                        styel = {styles.input}
+                        style = {styles.input}
                         placeholder = "Enter note..."
                         placeholderTextColor = '#aaa'
                         value = {newNote}
@@ -56,7 +70,7 @@ const NoteScreen = () => {
                             </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style = {styles.saveButton}>
+                        <TouchableOpacity style = {styles.saveButton} onPress = {addNote}>
                             <Text style = {styles.saveButtonText}>
                                 Save
                             </Text>
