@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 
 const RootLayout = () => {
   return <Stack
-    screenOptions={{
+    screenOptions = {{
       headerStyle: {
         backgroundColor: '#001F54'
       },
